@@ -3604,7 +3604,7 @@
 #         fw.write(line)
 
 
-import os
+# import os
 
 # print(os.getcwd())  # путь к текущей директории
 #
@@ -3623,4 +3623,12 @@ import os
 
 # os.rename("www.txt", "folder/www.txt")  # переместили файл в заданную папку
 
-os.renames("text4.txt", "test/text4.txt")  # переместили файл, создавая промежуточные папки
+# os.renames("text4.txt", "test/text4.txt")  # переместили файл, создавая промежуточные папки
+
+# import csv
+#
+# with open('date.csv') as f:
+#     file_reader = csv.reader(f, delimiter=',')
+#
+#     for row in file_reader:
+#         print(row)
