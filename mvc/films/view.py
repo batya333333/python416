@@ -2,11 +2,14 @@ def add_title(title):
     def wrapper(func):
         def wrap(*args, **kwargs):
             print(f'{title}'.center(50, '='))
-            output=func(*args, **kwargs)
+            output = func(*args, **kwargs)
             print('=' * 50)
             return output
+
         return wrap
+
     return wrapper
+
 
 class UserInterface:
     @add_title('Ввод пользовательских данных')
@@ -15,6 +18,8 @@ class UserInterface:
         print('Действие с фильмами:')
         print('\n1 - добавление фильма'
               '\n2 - каталог фильмов'
+              '\n3 - поиск по названию фильма'
+              '\n4 - просмотр фильмов'
               '\nq - выход из программы')
         user_answer = input('Выберите вариант действий')
         # print('=' * 50)
@@ -38,3 +43,25 @@ class UserInterface:
         for ind, article in enumerate(articles, 1):
             print(f'{ind}. {article}')
         # print('=' * 50)
+
+    @add_title("Ввод названия фильма:")
+    def get_user_article(self):
+        user_article = input("Введите название фильма: ")
+        return user_article
+
+    @add_title("Просмотр фильмов:")
+    def show_single_article(self, article):
+        for key in article:
+            print(f"{key} фильма - {article[key]}")
+
+    @add_title("Сообщение об ошибке:")
+    def show_incorrect_title_error(self, user_title):
+        print(f"Фильма с названием {user_title} не существует")
+
+    @add_title("Удаление фильма:")
+    def remove_single_article(self, article):
+        print(f"Фильм {article} - был удален")
+
+    @add_title("Сообщение об ошибке:")
+    def show_incorrect_answer_error(self, answer):
+        print(f"Варианта {answer} не существует")
