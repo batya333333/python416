@@ -1,0 +1,23 @@
+5
+SELECT MAX(Count)
+FROM ClientGoods cg
+6
+SELECT MIN(CostUnit*Count) AS МинимальнаяCуммаПокупки
+FROM ClientGoods cg
+7
+SELECT SUM(CostUnit * Count)
+FROM ClientGoods cg, Client c
+WHERE (cg.INNClient = c.INNClient) and (c.Status = 'магазин')
+8
+SELECT SUM(Count)
+FROM SallerGoods sg
+WHERE Goods LIKE '%Вафли%'
+9
+SELECT avg(CostUnit)
+FROM SallerGoods sg
+WHERE sg.Goods = 'масло подсолнечное' 
+10
+SELECT SUM(cg.Count)
+FROM ClientGoods cg, SallerGoods sg
+WHERE Goods LIKE '%Яблоки%'
+    
