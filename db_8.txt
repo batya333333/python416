@@ -1,0 +1,19 @@
+5.	Íàïèøèòå çàïğîñ, êîòîğûé âûâîäèë áû çàêàçû êëèåíòà Liu
+SELECT c.cname,o.onum
+FROM Customers c,Orders o
+WHERE c.snum = o.snum and c.cname='Liu'
+
+6.	Îïğåäåëèòå íàèáîëüøèå êîìèññèîííûå ïğîäàâöà äëÿ Ğèìà.
+SELECT MAX(sp.com)
+FROM Salespeople sp,Customers c
+WHERE sp.snum = c.snum and c.city = 'Rome'
+
+7.	Íàïèøèòå çàïğîñ êîòîğûé âûâåäåò âñåõ êëèåíòîâ îáñëóæèâàåìûõ ïğîäàâöîì Motiêà.
+SELECT Count(c.cname)
+FROM Salespeople sp, Customers c
+WHERE sp.snum = c.snum and sp.sname = 'Motika'
+
+8.	Íàïèøèòå çàïğîñ, êîòîğûé âûâåäåò ìàêñèìàëüíûé ğåéòèíã çàêàç÷èêà äëÿ ïğîäàâöîâ èìåşùèõ êîìèññèîííûå áîëüøå 0,11%.
+SELECT MAX(c.rating)
+FROM Customers c, Salespeople sp
+WHERE sp.com > 0.11 and (sp.snum = c.snum)
