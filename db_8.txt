@@ -1,15 +1,18 @@
 5.	Напишите запрос, который выводил бы заказы клиента Liu
-SELECT c.cname,o.onum
-FROM Customers c,Orders o
-WHERE c.snum = o.snum and c.cname='Liu'
-
+SELECT *
+FROM Orders
+WHERE cnum = (
+    SELECT cnum
+    FROM Customers
+    WHERE cname = 'Liu'
+    )
 6.	Определите наибольшие комиссионные продавца для Рима.
 SELECT MAX(sp.com)
 FROM Salespeople sp,Customers c
 WHERE sp.snum = c.snum and c.city = 'Rome'
 
 7.	Напишите запрос который выведет всех клиентов обслуживаемых продавцом Motiка.
-SELECT Count(c.cname)
+SELECT c.cname
 FROM Salespeople sp, Customers c
 WHERE sp.snum = c.snum and sp.sname = 'Motika'
 
