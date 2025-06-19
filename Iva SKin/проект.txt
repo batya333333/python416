@@ -1,0 +1,7 @@
+--header
+-main info
+-service
+-about us
+-FAQ
+-contact
+--footer
