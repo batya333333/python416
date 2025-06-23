@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>{{title}}</title>
 </head>
 <body>
     <header>
@@ -30,7 +30,7 @@
     <section1 class="main-intro">
         <div class="main-inner">
             <div class="left">
-                <h1>Iva Skin — гладкая кожа навсегда</h1>
+                <h1><span id="o1">Iva Skin</span> — гладкая кожа навсегда</h1>
                 <ul class="main-list">
                     <li class="main-li" id="hah2">
                         <h2 id="main-h2">лазерная эпиляция</h2>
@@ -42,7 +42,7 @@
                         <h2 id="main-h2">ресницы</h2>
                     </li>
                 </ul>
-                <h2 id="main-h22">Идеальная кожа — это просто. Доверься профессионалам Iva Skin</h2>
+                <h2 id="main-h22">Идеальная кожа — это просто. Доверься профессионалам <span id="o2">Iva Skin</span></h2>
                 <button class="main-btn">записаться</button>
             </div>
             <div class="right">
@@ -59,50 +59,54 @@
             </div>
             <div class="wrapper-complex">
                 <div class="complex1">
-                    <img id='img1'src="../static/service1.jpg">
+                    <img id='img1'src="../static/img1.png">
                     <div class="text-img">
                         <h1>Комплекс (XL) — 5 000 ₽</h1>
-                        <h3 id="complex-h3">Для тех, кто ценит максимум комфорта:</h3>
+                        <h3 id="complex-h3">Современное оборудование гарантирует эффективность и комфорт во время процедуры:</h3>
                         <h3>ноги полностью + бикини/подмышки</h3>
                         <h3>Экономия до 30% по сравнению с разовыми процедурами</h3>
                         <h3>Идеально перед отпуском или к важному событию</h3>
                     </div>
                 </div>
-                <div class="complex1">
-                    <img id='img2'src="../static/servive2.jpg">
+                <hr width="1200px">
+                <div class="complex2">
+                    <img id='img2'src="../static/img2.png">
                     <div class="text-img">
                         <h1>Комплекс (L) — 2 900 ₽</h1>
-                        <h3>Для тех, кто ценит максимум комфорта:</h3>
+                        <h3 id="complex-h3">Подходит для всех типов кожи включая смуглую и чувствительную:</h3>
                         <h3>Ноги до колен + подмышки</h3>
                         <h3>Или бикини + подмышки</h3>
                         <h3>Оптимальное сочетание цены и результата</h3>
                     </div>
                 </div>
-                <div class="complex1">
-                    <img id='img3'src="../static/service3.jpg">
+                <hr width="1200px">
+                <div class="complex3">
+                    <img id='img3'src="../static/img3.png">
                     <div class="text-img">
                         <h1>Комплекс (М) — 2 200 ₽</h1>
-                        <h3>Локальное решение:</h3>
+                        <h3 id="complex-h3">Встроенная система охлаждения делает процесс безболезненным:</h3>
                         <h3>Живот + линия бикини</h3>
                         <h3>Руки до локтя</h3>
                         <h3>Или зона подбородка/шеи</h3>
                     </div>
                 </div>
-                <div class="complex1">
-                    <img id='img4'src="../static/service4.jpg">
+                <hr width="1200px">
+                <div class="complex4">
+                    <img id='img4'src="../static/img4.png">
                     <div class="text-img">
                         <h1>Комплекс (S) — 1 700 ₽</h1>
-                        <h3>Для точечной коррекции:</h3>
+                        <h3 id="complex-h3">Опытные косметологи подберут индивидуальные параметры:</h3>
                         <h3>Подмышки</h3>
                         <h3>Глубокое бикини</h3>
                         <h3>Верхняя губа</h3>
                     </div>
                 </div>
-                <div class="complex1">
-                    <img id='img5'src="../static/service5.jpg">
+                <hr width="1200px">
+                <div class="complex5">
+                    <img id='img5'src="../static/img5.png">
                     <div class="text-img">
                         <h1>Комплекс (XS) — 1 400 ₽</h1>
-                        <h3>Мини-зоны:</h3>
+                        <h3 id="complex-h3">Специальные акции: скидки на курс пробный сеанс:</h3>
                         <h3>Кисти рук</h3>
                         <h3>Лицо (верхняя губа, подбородок)</h3>
                         <h3>Межбровье</h3>
@@ -192,5 +196,22 @@
     </div>
     
     </section> -->
+    
+    <div class="wraplog">
+        <hr width="auto">
+        <section class="menu_db">
+            <div class="menudb">
+                <h1 id="menuname">личный кабинет</h1>
+                <div class="podmenu">
+                    {% for m in menu %}
+                        <h3><a href="{{ m.url }}">{{ m.User }}</a></h3>
+                        <!-- <h3><a href="{{m.url}}">{{m.Password}}</a></h3> -->
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <hr width="auto">
+    </div>
+    
 </body>
 </html>

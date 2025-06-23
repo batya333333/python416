@@ -18,10 +18,24 @@ body{
     margin: 0 auto;
 }
 
+#o1{
+    color:#A23A3F;
+    /* font-weight: 700; */
+    border-top: solid;
+}
+
+#o2{
+    color:#A23A3F;
+    font-weight: 700;
+    border-bottom: solid;
+}
+
 .header-inner{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .menu__list{
@@ -83,9 +97,11 @@ body{
     padding-top: 3vw;
     padding-bottom: 3vw;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: #F0F0F0;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .right img{
@@ -95,11 +111,13 @@ body{
 
 .left{
     max-width: 570px;
+    color: #6C6968;
 }
 
 
 #hah2{
     list-style: none;
+    font-weight: 600;
 }
 
 .main-list{
@@ -125,7 +143,7 @@ body{
 }
 
 #main-h22{
-    font-weight: 500;
+    /* font-weight: 500; */
     /* text-transform: capitalize; */
     /* word-spacing: 1.55px; */
     font-size: 20px;
@@ -133,7 +151,7 @@ body{
 }
 
 #main-h2{
-    font-weight: 500;
+    /* font-weight: 500; */
     text-transform: uppercase;
     word-spacing: 1.55px;
     font-size: 25px;
@@ -226,31 +244,115 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2vw;
+    gap: 200px;
     padding-bottom: 3vw;
-    flex-direction: column;
     text-align: center;
+}
+
+.complex2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+    padding-bottom: 3vw;
+    text-align: center;
+    flex-direction: row-reverse;
+}
+
+.complex2 img{
+    width: 400px;
+    /* height: auto;
+    width: auto;
+    max-width: 400px;
+    max-height: 400px; */
+    height: 400px;
+}
+
+.complex3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+    padding-bottom: 3vw;
+    text-align: center;
+}
+
+.complex3 img{
+    width: 400px;
+    /* height: auto;
+    width: auto;
+    max-width: 400px;
+    max-height: 400px; */
+    height: 400px;
+}
+
+.complex4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+    padding-bottom: 3vw;
+    text-align: center;
+    flex-direction: row-reverse;
+}
+
+.complex4 img{
+    width: 400px;
+    /* height: auto;
+    width: auto;
+    max-width: 400px;
+    max-height: 400px; */
+    height: 400px;
+}
+
+.complex5{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+    /* padding-bottom: 3vw; */
+    text-align: center;
+}
+
+.complex5 img{
+    width: 400px;
+    /* height: auto;
+    width: auto;
+    max-width: 400px;
+    max-height: 400px; */
+    height: 400px;
 }
 
 .text-img h1{
     color: #A23A3F;
     font-size: 35px;
+    font-weight: 800;
 }
 
 .text-img h3{
-    color: #64485C;
+    /* color: #64485C; */
+    color:#000000;
     font-size:18px;
     font-weight: 300;
     word-spacing: 1.9px;
+    margin-bottom: 0;
+
 }
 
 #complex-h3{
     text-transform: lowercase;
+    font-size: 15px;
+    color: #64485C;
+    margin-bottom:18px;
+    text-align: justify;
 }
 
 .text-img{
     width: 600px;
     height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 #img1{
@@ -275,9 +377,8 @@ body{
 
 .wrapper-complex{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top:34px;
+    margin-top: 34px;
+    flex-direction: column;
 }
 
 
@@ -285,7 +386,7 @@ body{
     padding-top: 200px;
     padding-bottom: 200px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: white;
 }
@@ -309,7 +410,7 @@ body{
 }
 
 #main-h22{
-    font-weight: 500;
+    /* font-weight: 500; */
     text-transform: capitalize;
     word-spacing: 1.55px;
     font-size: 25px;
@@ -468,4 +569,31 @@ body{
 .div44 h1{
     font-size: 25px;
     color:#A23A3F;
+}
+
+.menudb{
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.podmenu{
+    display: flex;
+    justify-content: center;
+}
+
+#menuname{
+    text-align: center;
+    color:#A23A3F;
+    font-size: 40px;
+    margin-top:18.720px;
+}
+
+.podmenu a{
+    text-decoration: none;
+    color:#64485C;
+    font-size: 24px;
+}
+
+.wraplog{
+    background-color: #F3E2D5;
 }
