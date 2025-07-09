@@ -1,0 +1,16 @@
+{% extends 'skills/base.html' %}
+{% load static %}
+{% block content %}
+
+<h1>Страница блога</h1>
+{% for blog in blogs %}
+    <div class="element">
+        <a href="{% url 'detail' blog.id %}"><h2 class="top">{{ blog.title }}</h2></a>
+        <div class="blog_text">
+            <h5>{{ blog.data|date:'d.m.Y'}}</h5>
+            <div>{{ blog.description|striptags|truncatechars:360 }}</div>
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}
