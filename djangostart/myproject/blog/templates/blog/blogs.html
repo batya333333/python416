@@ -1,0 +1,14 @@
+{% extends 'dz/base.html' %}
+{% load static %}
+{% block content %}
+
+<h1 class="about-bl">Блог</h1>
+
+{% for i in gg %}
+<div class="wrapper">
+    <h1><a href="{% url 'detail' i.id %}">{{ i.title }}</a></h1>
+    <h3>{{ i.description|striptags|truncatechars:360 }}</h3>
+</div>
+{% endfor %}
+
+{% endblock %}

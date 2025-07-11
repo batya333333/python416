@@ -9,17 +9,17 @@
         <h1 id="fst">Образование:</h1>
         <h1>
             <ul class="education-list">
-            <li class="education-item">
-                <div class="institution">Академия Синергия</div>
-            </li>
-            <li class="education-item">
-                <div class="institution">Академия TOP</div>
-            </li>
-            <li class="education-item">
-                <div class="institution">ЮФУ ИКТИБ</div>
-                <div class="details">
-                    <div><strong>Направление:</strong> Информатика и вычислительная техника</div>
-                    <div class="specialization">Специализация: Технологии искусственного интеллекта</div>
+                <li class="education-item">
+                    <div class="institution">Академия Синергия</div>
+                </li>
+                <li class="education-item">
+                    <div class="institution">Академия TOP</div>
+                </li>
+                <li class="education-item">
+                    <div class="institution">ЮФУ ИКТИБ</div>
+                    <div class="details">
+                        <div><strong>Направление:</strong> Информатика и вычислительная техника</div>
+                        <div class="specialization">Специализация: Технологии искусственного интеллекта</div>
         </h1>
         <h1 id="fst"><a href="https://github.com/batya333333">GitHub</a></h1>
     </div>
@@ -40,7 +40,18 @@
     {% endfor %}
 </div>
 
+<div class="aa">
+    <h1><a href="{% url 'bloggg' %}">Блог</a></h1>
+</div>
 
+{% for i in blog %}
+<div class="blog_page">
+    <h1>{{ i.title }}</h1>
+    <div class="blog_text">
+        <h3>{{ i.description }}</h3>
+    </div>
+</div>
+{% endfor %}
 
 {% endblock %}
 
