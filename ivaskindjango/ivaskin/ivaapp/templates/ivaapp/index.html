@@ -62,10 +62,10 @@
                 <div class="complex1">
                     <img id='img1'src="{%static 'ivaapp/img1.png'%}">
                     <div class="text-img">
-                        <h1>Комплекс (XL) — 5 000 ₽</h1>
+                        <h1>Комплекс (XL) — 5 300 ₽</h1>
                         <h3 id="complex-h3">Современное оборудование гарантирует эффективность и комфорт во время процедуры:</h3>
-                        <h3>ноги полностью + бикини/подмышки</h3>
-                        <h3>Экономия до 30% по сравнению с разовыми процедурами</h3>
+                        <h3>Тотальное бикини + подмышки</h3>
+                        <h3>полностью ноги + полностью руки</h3>
                         <h3>Идеально перед отпуском или к важному событию</h3>
                     </div>
                 </div>
@@ -73,10 +73,10 @@
                 <div class="complex2">
                     <img id='img2'src="{%static 'ivaapp/img2.png'%}">
                     <div class="text-img">
-                        <h1>Комплекс (L) — 2 900 ₽</h1>
+                        <h1>Комплекс (M) — 2 200 ₽</h1>
                         <h3 id="complex-h3">Подходит для всех типов кожи включая смуглую и чувствительную:</h3>
-                        <h3>Ноги до колен + подмышки</h3>
-                        <h3>Или бикини + подмышки</h3>
+                        <h3>Тотальное бикини + голени</h3>
+                        <h3>Лазерная эпиляция зон бекини и голени</h3>
                         <h3>Оптимальное сочетание цены и результата</h3>
                     </div>
                 </div>
@@ -84,22 +84,22 @@
                 <div class="complex3">
                     <img id='img3'src="{%static 'ivaapp/img3.png'%}">
                     <div class="text-img">
-                        <h1>Комплекс (М) — 2 200 ₽</h1>
+                        <h1>Комплекс (S) — 1 700 ₽</h1>
                         <h3 id="complex-h3">Встроенная система охлаждения делает процесс безболезненным:</h3>
-                        <h3>Живот + линия бикини</h3>
-                        <h3>Руки до локтя</h3>
-                        <h3>Или зона подбородка/шеи</h3>
+                        <h3>Тотально бикини + подмышки</h3>
+                        <h3>Лазерная эпиляция зон бикини и подмышек</h3>
+                        <h3>подмышечные впадины</h3>
                     </div>
                 </div>
                 <hr width="1200px">
                 <div class="complex4">
                     <img id='img4'src="{%static 'ivaapp/img4.png'%}">
                     <div class="text-img">
-                        <h1>Комплекс (S) — 1 700 ₽</h1>
+                        <h1>Комплекс (L) — 2 900 ₽</h1>
                         <h3 id="complex-h3">Опытные косметологи подберут индивидуальные параметры:</h3>
-                        <h3>Подмышки</h3>
-                        <h3>Глубокое бикини</h3>
-                        <h3>Верхняя губа</h3>
+                        <h3>Тотальное бикини + подмышки + голени</h3>
+                        <h3>Лазерная эпиляция зон бикини, голени </h3>
+                        <h3>Подмышечные впадины</h3>
                     </div>
                 </div>
                 <hr width="1200px">
@@ -108,9 +108,9 @@
                     <div class="text-img">
                         <h1>Комплекс (XS) — 1 400 ₽</h1>
                         <h3 id="complex-h3">Специальные акции: скидки на курс пробный сеанс:</h3>
-                        <h3>Кисти рук</h3>
-                        <h3>Лицо (верхняя губа, подбородок)</h3>
-                        <h3>Межбровье</h3>
+                        <h3>Подмышки + голени</h3>
+                        <h3>В него включены:</h3>
+                        <h3>подмышечные впадины и голени</h3>
                     </div>
                 </div>
             </div>
@@ -175,20 +175,41 @@
         </div>
     </section>
 
-    <div class="about-us">
-        <h1>Отзывы от наших клиентов</h1>
+    <div class="otdel">
+        <h1 class="otdel-reviews">Отдельные услуги</h1>
+        {% for i in clients %}
+            <div class="menu-client">
+                <div class="text-client">
+                    <h1 id="h1r">{{ i.title }}</h1>
+                    <h3 id="h3r">{{ i.description }}</h3>
+                    <ul>
+                        <li><h3>{{ i.dopinfo1|default:"Нет" }}</h3></li>
+                        <li><h3>{{ i.dopinfo2|default:"Нет" }}</h3></li>
+                        <li><h3>{{ i.dopinfo3|default:"Нет" }}</h3></li>
+                        <li><h3>{{ i.dopinfo4|default:"Нет" }}</h3></li>
+                    </ul>
+                    <button class="main-btn2"><a href="{% url 'description' i.id %}">Записаться</a></button>
+                </div>
+                <img src="{{ i.image.url }}" alt="">
+            </div>
+        {% endfor %}
     </div>
 
+
     <div class="reviews-ad">
+        <h1 class="otdel-reviews">Отзывы от наших клиентов</h1>
+
         {% for i in props %}
         <div class="texts">
-            <h1>{{ i.title }}</h1>
-            {% if media.image %}
+            <div class="in">
+                <h1>{{ i.title }}</h1>
+                <h2>{{ i.description }}</h2>
+            </div>
+            {% if i.image %}
                 <div class="img-reviews"><img src="{{ i.image.url }}" alt=""></div>
             {% else %}
-                <p>No image uploaded</p>
+                <p>Изображение не загружено</p>
             {% endif %}
-            <h2>{{ i.description }}</h2>
         </div>
         {% endfor %}
     </div>
