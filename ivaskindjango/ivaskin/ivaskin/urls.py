@@ -21,8 +21,13 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
+    #visual
     path('admin/', admin.site.urls),
     path('', views.ind, name='index'),
-    path('<int:description_id>/', views.desc, name='description')
+    path('<int:description_id>/', views.desc, name='description'),
+    #auth
+    path('signup/', views.signup_user, name='signupuser'),
+    path('logout/', views.logout_user, name='logoutuser'),
+    path('login/', views.login_user, name='loginuser'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
