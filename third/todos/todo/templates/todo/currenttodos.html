@@ -5,6 +5,7 @@
 <h1>Задачи:</h1>
 
 <ul>
+    {% csrf_token %}
     {% for todo in todos %}
     <li>
         <a href="{% url 'viewtodo' todo.id %}">
