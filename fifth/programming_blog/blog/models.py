@@ -6,7 +6,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=255, verbose_name='Название')
     slug = models.SlugField(max_length=255,unique=True, verbose_name='url')
     content = models.TextField(blank=True, verbose_name='Контент')
-    photo = models.ImageField(upload_to="photos/%Y/%m/%d/", verbose_name='Фото')
+    photo = models.ImageField(upload_to="photos/%Y/%m/%d/", verbose_name='Фото', blank=True, null=True)
     time_created = models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')
     time_update = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
     is_published = models.BooleanField(default=True, verbose_name='Опубликовано')
